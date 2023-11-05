@@ -1,0 +1,85 @@
+body {
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+  margin: 0;
+
+}
+
+.historic-game-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.blocks-option-game-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  height: 60%;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.yellow-container-game,
+.red-container-game,
+.green-container-game,
+.blue-container-game {
+  width: 49%;
+  height: 49%;
+  border-radius: 10px;
+}
+
+.yellow-container-game {
+  background-color: rgb(255, 255, 103);
+  border: rgb(255, 255, 103);
+}
+
+.red-container-game {
+  background-color: rgb(255, 88, 88);
+  border: rgb(255, 88, 88);
+}
+
+.green-container-game {
+  background-color: rgb(93, 255, 93);
+  border: rgb(93, 255, 93);
+}
+
+.blue-container-game {
+  background-color: rgb(87, 87, 255);
+  border: rgb(87, 87, 255);
+}
+
+.button-play-game {
+  width: 200px;
+  height: 80px;
+  font-size: x-large;
+  background-color: #1a77d4e3; 
+  color: white; 
+  border: 2px solid #005bb5; 
+  border-radius: 10px; 
+  text-align: center; 
+  cursor: pointer; 
+  margin-top: 20%;
+}
+
+.button-play-game:hover {
+  background-color: #619cd8; 
+  color: #ffffff; 
+}
+
+
+
+

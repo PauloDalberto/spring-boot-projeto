@@ -1,44 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo da memória</title>
+  <title>GENIUS</title>
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
   <script src="/js/springGameLogic.js"></script>
 </head>
 
 <body>
+  <div class="container">
 
-  <div class="historic-game-container">
-    <h1>Histórico de partidas</h1>
-    <p>Pontuação: 10</p>
-    <p>Pontuação: 2</p>
-    <p>Pontuação: 6</p>
-    <p>Pontuação: 20</p>
-  </div>
+    <div class="game">
+      <button class="green-game-container"></button>
+      <button class="red-game-container"></button>
+      <button class="yellow-game-container"></button>
+      <button class="blue-game-container"></button>
 
-  <div class="game-container">
-    <h1>GENIUS</h1>
-    <div class="blocks-option-game-container">
-      <button class="yellow-container-game"></button>
-      <button class="red-container-game"></button>
-      <button class="green-container-game"></button>
-      <button class="blue-container-game"></button>
+      <div class="game-options">
+        <div class="title-game">
+          <h1>GENIUS</h1>
+        </div>
+
+        <div class="group-components">
+          <div>
+            <p>audio</p>
+            <input type="checkbox" id="toggleButton" class="toggleButton"/>
+            <label for="toggleButton" class="switch">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div>
+            <p>Round</p>
+            <div class="round-container">
+              <p class="text-in-container-round">
+                111
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p>Start</p>
+            <button class="start-game-button"></button>
+          </div>
+        </div>
+
+      </div>
     </div>
-  
-    <div class="button-play-container">
-      <button class="button-play-game">Iniciar jogo</button>
-    </div>
+
     <div>
-      <h1>Round: </h1>
+      <h1>RESULTADOS ANTERIORES</h1>
     </div>
+
+    <footer></footer>
   </div>
 
-  <div>
-    <h1>OUTRO TESTE</h1>
-  </div>
-
-    
 </body>
 </html>

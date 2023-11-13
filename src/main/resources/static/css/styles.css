@@ -1,9 +1,6 @@
 @import 'toggleButton.css';
-
-@font-face {
-  font-family: 'BebasNeue-Regular';
-  src: url('../../fonts/BebasNeue-Regular.ttf') format('truetype'); 
-}
+@import 'gameOptions.css';
+@import 'buttonGameContainer.css';
 
 body{
   padding: 10px;
@@ -33,105 +30,5 @@ body{
   position: relative;
 }
 
-.green-game-container,
-.red-game-container,
-.yellow-game-container,
-.blue-game-container{
-  width: 260px;
-  height: 260px;
-  cursor: pointer;
-
-  border: 8px solid;
-  border-color: black;
-}
-
-.green-game-container{
-  border-top-left-radius: 100%;
-  background-color: green;
-}
-
-.red-game-container{
-  border-top-right-radius: 100%;
-  background-color: red;
-}
-
-.yellow-game-container{
-  border-bottom-left-radius: 100%;
-  background-color: yellow;
-}
-
-.blue-game-container{
-  border-bottom-right-radius: 100%;
-  background-color: blue;
-}
-
-.game-options{
-  position: absolute;
-  background-color: white;
-  
-  width: 240px;
-  height: 240px;
-
-  top: 130px;
-  left: 130px;
-
-  border: 10px solid;
-  border-color: black;
-  border-radius: 25rem;
-}
-
-footer{
-  display: flex;
-  justify-content: center;
-  margin-top: 10%;
-}
 
 
-.start-game-button {
-  width: 35px;
-  height: 35px;
-  border: 4px solid;
-  border-radius: 100%;
-  background-color: red;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-
-.round-container {
-  height: 50px;
-  width: 70px;
-  background-color: rgba(165, 42, 42, 0.8);
-  border-radius: 20%;
-
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: end;
-
-  border: 3px solid;
-  border-color: black;
-}
-
-.text-in-container-round {
-  padding: 2px;
-  font-size: 30px;
-  color: black;
-  font-weight: bold;
-}
-
-.title-game {
-  display: flex;
-  justify-content: center; 
-}
-
-.group-components {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.group-components .column {
-  flex: 1;
-  text-align: center;
-  margin: 10px;
-}

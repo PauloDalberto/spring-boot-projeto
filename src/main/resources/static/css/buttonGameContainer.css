@@ -1,0 +1,32 @@
+
+.green-game-container,
+.red-game-container,
+.yellow-game-container,
+.blue-game-container{
+  width: 260px;
+  height: 260px;
+  cursor: pointer;
+
+  border: 8px solid;
+  border-color: black;
+}
+
+.green-game-container{
+  border-top-left-radius: 100%;
+  background-color: green;
+}
+
+.red-game-container{
+  border-top-right-radius: 100%;
+  background-color: red;
+}
+
+.yellow-game-container{
+  border-bottom-left-radius: 100%;
+  background-color: yellow;
+}
+
+.blue-game-container{
+  border-bottom-right-radius: 100%;
+  background-color: blue;
+}

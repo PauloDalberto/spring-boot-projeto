@@ -1,0 +1,132 @@
+document.addEventListener("DOMContentLoaded", function() {
+  let gameStarted = false;
+  let currentRound = 0;
+  const roundElement = document.querySelector(".text-in-container-round");
+  const colors = ["green", "red", "yellow", "blue"];
+  let sequence = [];
+  let playerSequence = [];
+  let highlighting = false;
+  let gamePaused = false;
+  let scores = []; 
+
+  async function startGame() {
+    if (!gameStarted) {
+      gameStarted = true;
+      currentRound = 3;
+      updateRoundElement();
+      await countdownRound();
+      gamePaused = false;
+      generateNextColor();
+    }
+  }
+
+  function updateRoundElement() {
+    roundElement.textContent = currentRound;
+  }
+
+  async function countdownRound() {
+    if (currentRound > 0) {
+      updateRoundElement();
+      currentRound--;
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await countdownRound();
+    } else {
+      updateRoundElement();
+    }
+  }
+
+  function generateNextColor() {
+    if (!gamePaused) {
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      const randomColor = colors[randomIndex];
+      sequence.push(randomColor);
+      playColorSequence();
+    }
+  }
+
+  function playColorSequence() {
+    highlighting = true;
+    let i = 0;
+    const interval = setInterval(function() {
+      if (i >= sequence.length) {
+        clearInterval(interval);
+        highlighting = false;
+        return;
+      }
+      const color = sequence[i];
+      markWhiteColor(color);
+      setTimeout(() => deselectWhiteColor(color), 500);
+      i++;
+    }, 1000);
+  }
+
+  function markWhiteColor(color) {
+    document.querySelector(`.${color}-game-container`).style.backgroundColor = "white";
+  }
+
+  function deselectWhiteColor(color) {
+    document.querySelector(`.${color}-game-container`).style.backgroundColor = "";
+  }
+
+  document.querySelectorAll(".game button").forEach(button => {
+    button.addEventListener("click", function() {
+      if (gameStarted && !highlighting) {
+        const color = button.className.split("-")[0];
+        markWhiteColor(color);
+        setTimeout(() => deselectWhiteColor(color), 500);
+
+        playerSequence.push(color);
+
+        if (playerSequence[playerSequence.length - 1] !== sequence[playerSequence.length - 1]) {
+          alert("Você errou! Fim de jogo.");
+          gamePaused = true;
+          scores.push(currentRound);
+          updateResultsList(); 
+          restartGame();
+        }
+
+        if (playerSequence.length === sequence.length) {
+          if (JSON.stringify(playerSequence) === JSON.stringify(sequence)) {
+            currentRound++;
+            playerSequence = [];
+            updateRoundElement();
+            generateNextColor();
+          } else {
+            alert("Você errou! Fim de jogo.");
+            gamePaused = true;
+            scores.push(currentRound);
+            updateResultsList();
+            restartGame();
+          }
+        }
+      }
+    });
+  });
+
+  document.querySelector(".start-game-button").addEventListener("click", function() {
+    if (gameStarted) {
+      restartGame();
+    } else {
+      startGame();
+    }
+  });
+
+  function restartGame() {
+    gameStarted = false;
+    currentRound = 0;
+    roundElement.textContent = currentRound;
+    sequence = [];
+    playerSequence = [];
+  }
+
+  function updateResultsList() {
+    const resultsList = document.getElementById("results-list");
+    resultsList.innerHTML = "";
+
+    scores.forEach(score => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `Pontuação: ${score}`;
+      resultsList.appendChild(listItem);
+    });
+  }
+});

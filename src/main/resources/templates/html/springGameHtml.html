@@ -24,7 +24,7 @@
         <div class="group-components">
           <div>
             <p>Audio</p>
-            <input type="checkbox" id="toggleButton" class="toggleButton"/>
+            <input type="checkbox" id="toggleButton" class="toggleButton" checked />
             <label for="toggleButton" class="switch">
               <span class="slider"></span>
             </label>
@@ -32,9 +32,7 @@
 
           <div>
             <p>Round</p>
-            <div class="round-container">
-              <p class="text-in-container-round"></p>
-            </div>
+            <div class="round-container"></div>
           </div>
 
           <div>
@@ -51,6 +49,12 @@
       <p class="result-teste"></p>
       <ul id="results-list" ></ul>
     </div>
+
+    <audio id="audio-green" src="/audio/green-audio.mp3"></audio>
+    <audio id="audio-red" src="/audio/red-game.mp3"></audio>
+    <audio id="audio-yellow" src="/audio/yellow-audio.mp3"></audio>
+    <audio id="audio-blue" src="/audio/blue-audio.mp3"></audio>
+    <audio id="audio-error" src="/audio/error-audio.mp3"></audio>
   </div>
 </body>
 </html>

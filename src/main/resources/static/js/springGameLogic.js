@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
           alert("Você errou! Fim de jogo.");
           gamePaused = true;
           scores.push(currentRound);
-          updateResultsList();
+          uptadePreviousResults();
           restartGame();
         }
 
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Você errou! Fim de jogo.");
             gamePaused = true;
             scores.push(currentRound);
-            updateResultsList();
+            uptadePreviousResults();
             restartGame();
           }
         }
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  function updateResultsList() {
+  function uptadePreviousResults() {
     const resultsList = document.getElementById("results-list");
     resultsList.innerHTML = "";
 

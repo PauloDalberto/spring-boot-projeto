@@ -25,7 +25,7 @@
 }
 
 .toggleButton:checked + .switch {
-  background-color: rgb(28, 155, 134)
+  background-color: rgb(28, 155, 134);
 }
 
 .toggleButton:checked + .switch .slider {

@@ -59,16 +59,16 @@
   O CSS do projeto foi dividido em 4 arquivos, com o objetivo de diminuir o tamanho do código e melhorar na manutenção e entendimento do código, os arquivos são:
    - styles: o arquivo pai dos demais (considerado o main), dentro dele vou importar os outros 3 arquivos, esse arquivo possui a estilização do container e de uma das 3 div's principais (já que as outras duas não possuem estilização).
    - gameOptions: neste arquivo está a estilização de um subcomponente da div game, aqui vai estar a estlização dos botões start, contador, entre outros.
-   - buttonGameContainer: Aqui está a estilização dos botões na qual o usuário realiza todo o procedimento do jogo
-   - toggleButton: aqui está o CSS do botão de ativar e desativar audio, como ele tem estilização própria e não é um simples botão que importa diretamente do html, foi criado um arquivo separado, que pode ser até reutilizado caso precisse criar um botão com a mesma estrutura
+   - buttonGameContainer: Aqui está a estilização dos botões na qual o usuário realiza todo o procedimento do jogo.
+   - toggleButton: aqui está o CSS do botão de ativar e desativar audio, como ele tem estilização própria e não é um simples botão que importa diretamente do html, foi criado um arquivo separado, que pode ser até reutilizado caso precise criar um botão com a mesma estrutura.
 
 ### JavaScript
   O JS da aplicação possui no seu topo uma função DOMContentLoaded, na qual é acionado simento quando o HTML está completamente carregado, ele será acionado apenas quando a estrutra da página está 100% carregada e assim o JS pode ser utilizado. 
-  Logo abaixo estão todos os let's e const's, respectivamente, que serão utilizados no projeto e que podem estar em mais de uma função
+  Logo abaixo estão todos os let's e const's, respectivamente, que serão utilizados no projeto e que podem estar em mais de uma função.
   A partir disso começa as funções na qual executam toda a lógica do jogo, funções como iniciar jogo, reiniciar jogo, tocar o audio, gerar a proxima cor. Todos buscando a melhor nomenclatura possivel, para se tornar de fácil entendimento.
 
 ### Java Inicializador
   O arquivo está unicamente responsável por inicializar o projeto spring boot, ele é o main do projeto.
 
 ### Java Controller
-  Arquivo responsável pelo roteamento da página html com o servidor
+  Arquivo responsável pelo roteamento da página html com o servidor.

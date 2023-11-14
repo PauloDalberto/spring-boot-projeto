@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const roundContainer = document.querySelector(".round-container"); 
   const colors = ["green", "red", "yellow", "blue"];
+  const toggleButton = document.getElementById("toggleButton");
+  const getAudio = document.querySelectorAll("audio");
 
   async function startGame() {
     if (!gameStarted) {
@@ -40,6 +42,26 @@ document.addEventListener("DOMContentLoaded", function() {
   function playAudio(color) {
     const audioElement = document.getElementById(`audio-${color}`);
     audioElement.play();
+  }
+
+  toggleButton.addEventListener("change", function() {
+    if (toggleButton.checked) {
+      enableAudio();
+    } else {
+      disableAudio();
+    }
+  });
+
+  function enableAudio() {
+    getAudio.forEach(audio => {
+      audio.muted = false;
+    });
+  }
+
+  function disableAudio() {
+    getAudio.forEach(audio => {
+      audio.muted = true;
+    });
   }
 
   function updateRoundElement() {
